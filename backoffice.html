@@ -144,7 +144,26 @@
     
     <!-- Bootstrap Bundle con Popper -->
     <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script>
+        // Dichiarazione delle variabili globali condivise
+        const API_URL = 'https://striveschool-api.herokuapp.com/api/product/';
+        const STRIVESCHOOL_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGNkMTZhODZmMzAyMjAwMTUxMDgwZTMiLCJpYXQiOjE3NTgyNzExNDQsImV4cCI6MTc1OTQ4MDc0NH0.gQFBPic0-yXwrfDjCkMl8gk4dDfKT-2Abfouj9qSLnM';
+        
+        // Gestione del form di ricerca nella navbar
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchForm = document.querySelector('nav form[role="search"]');
+            if (searchForm) {
+                searchForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const searchInput = searchForm.querySelector('input[type="search"]');
+                    const searchTerm = searchInput.value.trim();
+                    
+                    // Reindirizza alla pagina index con il parametro di ricerca
+                    window.location.href = 'index.html?search=' + encodeURIComponent(searchTerm);
+                });
+            }
+        });
+    </script>
     <script src="assets/js/backoffice.js"></script>
 </body>
 </html>

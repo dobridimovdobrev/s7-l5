@@ -286,8 +286,8 @@ function loadProducts(searchTerm) {
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts();
     
-    // Aggiungi il gestore per il form di ricerca
-    const searchForm = document.querySelector('form[role="search"]');
+    // Aggiungi il gestore per il form di ricerca nella navbar
+    const searchForm = document.querySelector('nav form[role="search"]');
     if (searchForm) {
         searchForm.addEventListener('submit', handleSearch);
     }

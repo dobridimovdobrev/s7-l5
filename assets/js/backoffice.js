@@ -1,6 +1,4 @@
-// Configurazione API
-const API_URL = 'https://striveschool-api.herokuapp.com/api/product/';
-const STRIVESCHOOL_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGNkMTZhODZmMzAyMjAwMTUxMDgwZTMiLCJpYXQiOjE3NTgyNzExNDQsImV4cCI6MTc1OTQ4MDc0NH0.gQFBPic0-yXwrfDjCkMl8gk4dDfKT-2Abfouj9qSLnM';
+// Nota: API_URL e STRIVESCHOOL_API_KEY sono già definiti in script.js
 
 // Elementi DOM
 const productForm = document.getElementById('productForm');
@@ -21,10 +19,10 @@ const previewBrand = document.getElementById('previewBrand');
 const previewDescription = document.getElementById('previewDescription');
 const previewPrice = document.getElementById('previewPrice');
 
-// Modal di conferma
-const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
-const confirmModalBody = document.getElementById('confirmModalBody');
-const confirmModalBtn = document.getElementById('confirmModalBtn');
+// Variabili per il modal di conferma
+let confirmModal;
+let confirmModalBody;
+let confirmModalBtn;
 
 // Variabili globali
 let productId = null;
@@ -218,6 +216,11 @@ async function deleteProduct() {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
+    // Inizializza le variabili del modal
+    confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+    confirmModalBody = document.getElementById('confirmModalBody');
+    confirmModalBtn = document.getElementById('confirmModalBtn');
+    
     // Controlla se c'è un ID prodotto nell'URL (per modalità modifica)
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
