@@ -13,31 +13,31 @@
     <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="home-page">
+<body class="pt-5 mt-2">
     <!-- header -->
-    <header style="position: relative;">
+    <header>
         <!-- nav -->
-        <nav id="navigation" class="navbar navbar-expand-lg p-3 position-absolute w-100" style="z-index: 1030;">
+        <nav id="navigation" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top p-3 w-100">
             <div class="container">
                 <a href="./index.html" class="navbar-brand text-decoration-none">
-                    <h2 style="color: white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);">Super<span class="text-primary">Store</span></h2>
+                    <h2>Super<span class="text-primary">Store</span></h2>
                 </a>
                 
                 <!-- Hamburger menu button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: rgba(255, 255, 255, 0.5);">
-                    <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'rgba%28255, 255, 255, 0.75%29\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e');"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 
                 <!-- Collapsible content -->
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="./index.html" style="color: white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./backoffice.html" style="color: white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);">Backoffice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./backoffice.html">Backoffice</a></li>
                     </ul>
                     
-                    <form class="d-flex position-relative w-100" role="search">
+                    <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Cerca">
-                        <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y" type="submit">
+                        <button class="btn btn-dark" type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>
@@ -133,29 +133,6 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      </main>
      <!-- footer -->
      <footer class="text-center p-4 text-bg-dark">
@@ -166,63 +143,5 @@
     <!-- Bootstrap Bundle con Popper -->
     <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script>
-        // Script per gestire la navbar trasparente/solida durante lo scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('navigation');
-            const navbarBrand = navbar.querySelector('.navbar-brand h2');
-            const navLinks = navbar.querySelectorAll('.nav-link');
-            const navbarToggler = navbar.querySelector('.navbar-toggler');
-            const navbarTogglerIcon = navbar.querySelector('.navbar-toggler-icon');
-            
-            function handleScroll() {
-                if (window.scrollY > 20) {
-                    // Stile per navbar scrollata
-                    navbar.style.position = 'fixed';
-                    navbar.style.backgroundColor = 'white';
-                    navbar.style.boxShadow = '0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)';
-                    
-                    // Ripristina colori testo
-                    navbarBrand.style.color = '';
-                    navbarBrand.style.textShadow = 'none';
-                    
-                    // Ripristina colori link
-                    navLinks.forEach(link => {
-                        link.style.color = '';
-                        link.style.textShadow = 'none';
-                    });
-                    
-                    // Ripristina stile hamburger
-                    navbarToggler.style.borderColor = 'rgba(0, 0, 0, 0.1)';
-                    navbarTogglerIcon.style.backgroundImage = "url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'rgba%280, 0, 0, 0.55%29\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e')";
-                } else {
-                    // Stile per navbar trasparente
-                    navbar.style.position = 'absolute';
-                    navbar.style.backgroundColor = 'transparent';
-                    navbar.style.boxShadow = 'none';
-                    
-                    // Testo bianco
-                    navbarBrand.style.color = 'white';
-                    navbarBrand.style.textShadow = '0px 1px 2px rgba(0, 0, 0, 0.5)';
-                    
-                    // Link bianchi
-                    navLinks.forEach(link => {
-                        link.style.color = 'white';
-                        link.style.textShadow = '0px 1px 2px rgba(0, 0, 0, 0.5)';
-                    });
-                    
-                    // Hamburger bianco
-                    navbarToggler.style.borderColor = 'rgba(255, 255, 255, 0.5)';
-                    navbarTogglerIcon.style.backgroundImage = "url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'rgba%28255, 255, 255, 0.75%29\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e')";
-                }
-            }
-            
-            // Esegui subito per impostare lo stato iniziale
-            handleScroll();
-            
-            // Aggiungi event listener per lo scroll
-            window.addEventListener('scroll', handleScroll);
-        });
-    </script>
 </body>
 </html>
