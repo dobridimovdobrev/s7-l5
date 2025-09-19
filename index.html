@@ -170,12 +170,50 @@
         // Script per gestire la navbar trasparente/solida durante lo scroll
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.getElementById('navigation');
+            const navbarBrand = navbar.querySelector('.navbar-brand h2');
+            const navLinks = navbar.querySelectorAll('.nav-link');
+            const navbarToggler = navbar.querySelector('.navbar-toggler');
+            const navbarTogglerIcon = navbar.querySelector('.navbar-toggler-icon');
             
             function handleScroll() {
                 if (window.scrollY > 20) {
-                    navbar.classList.add('navbar-scrolled');
+                    // Stile per navbar scrollata
+                    navbar.style.position = 'fixed';
+                    navbar.style.backgroundColor = 'white';
+                    navbar.style.boxShadow = '0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)';
+                    
+                    // Ripristina colori testo
+                    navbarBrand.style.color = '';
+                    navbarBrand.style.textShadow = 'none';
+                    
+                    // Ripristina colori link
+                    navLinks.forEach(link => {
+                        link.style.color = '';
+                        link.style.textShadow = 'none';
+                    });
+                    
+                    // Ripristina stile hamburger
+                    navbarToggler.style.borderColor = 'rgba(0, 0, 0, 0.1)';
+                    navbarTogglerIcon.style.backgroundImage = "url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'rgba%280, 0, 0, 0.55%29\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e')";
                 } else {
-                    navbar.classList.remove('navbar-scrolled');
+                    // Stile per navbar trasparente
+                    navbar.style.position = 'absolute';
+                    navbar.style.backgroundColor = 'transparent';
+                    navbar.style.boxShadow = 'none';
+                    
+                    // Testo bianco
+                    navbarBrand.style.color = 'white';
+                    navbarBrand.style.textShadow = '0px 1px 2px rgba(0, 0, 0, 0.5)';
+                    
+                    // Link bianchi
+                    navLinks.forEach(link => {
+                        link.style.color = 'white';
+                        link.style.textShadow = '0px 1px 2px rgba(0, 0, 0, 0.5)';
+                    });
+                    
+                    // Hamburger bianco
+                    navbarToggler.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                    navbarTogglerIcon.style.backgroundImage = "url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'rgba%28255, 255, 255, 0.75%29\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e')";
                 }
             }
             
