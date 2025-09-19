@@ -9778,6 +9778,7 @@ body {
   font-size: 1rem;
   background-color: #f7f7f7;
   color: #333;
+  min-height: 100vh;
 }
 
 h1, .h1,

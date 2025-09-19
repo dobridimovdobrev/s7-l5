@@ -20,6 +20,7 @@ body {
   font-size: 1rem;
   background-color: #f7f7f7;
   color: #333;
+  min-height: 100vh;
 }
 
 h1,
@@ -34,7 +35,7 @@ h6 {
 
 // Stili per navbar trasparente e sticky (solo per la home page)
 .home-page {
-  // Aggiunge padding-top al body per compensare la navbar fixed
+  
   padding-top: 70px;
   
   #navigation {
@@ -77,7 +78,7 @@ h6 {
     }
   }
   
-  // Assicura che il carousel inizi dall'alto della pagina
+ 
   header {
     margin-top: -70px; // Compensa il padding-top del body
   }
