@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Negozio online di fiducia, dove trovi prodotti di qualità, prezzi competitivi e spedizioni rapide. Acquista in modo facile, sicuro e senza complicazioni.">
+    <title>Negozio online</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home-page">
+    <!-- header -->
+    <header style="position: relative;">
+        <!-- nav -->
+        <nav id="navigation" class="navbar navbar-expand-lg p-3 position-absolute w-100" style="z-index: 1030;">
+            <div class="container">
+                <a href="./index.html" class="navbar-brand text-decoration-none">
+                    <h2 style="color: white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);">Super<span class="text-primary">Store</span></h2>
+                </a>
+                
+                <!-- Hamburger menu button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: rgba(255, 255, 255, 0.5);">
+                    <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 30 30\'%3e%3cpath stroke=\'rgba%28255, 255, 255, 0.75%29\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e');"></span>
+                </button>
+                
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="./index.html" style="color: white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./backoffice.html" style="color: white; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);">Backoffice</a></li>
+                    </ul>
+                    
+                    <form class="d-flex position-relative w-100" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cerca">
+                        <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="position-relative" style="height: 400px;">
+                        <img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg" class="w-100 h-100 object-fit-cover" alt="Smartphone di ultima generazione">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background-color: rgba(0,0,0,0.5);">
+                            <div class="container text-center text-white">
+                                <h2 class="display-4">Smartphone di ultima generazione</h2>
+                                <p class="lead text-truncate-2">Smartphone dalle alte prestazioni con display AMOLED a 120 Hz, processore Snapdragon di ultima</p>
+                                <a href="#" class="btn btn-primary mt-3">Scopri di più</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="position-relative" style="height: 400px;">
+                        <img src="https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg" class="w-100 h-100 object-fit-cover" alt="Offerte imperdibili">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background-color: rgba(0,0,0,0.5);">
+                            <div class="container text-center text-white">
+                                <h2 class="display-4">Offerte imperdibili</h2>
+                                <p class="lead text-truncate-2">Scopri le nostre offerte speciali su tutti i prodotti tecnologici, sconti fino al 50%</p>
+                                <a href="#" class="btn btn-primary mt-3">Vedi offerte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="position-relative" style="height: 400px;">
+                        <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg" class="w-100 h-100 object-fit-cover" alt="Accessori e gadget">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background-color: rgba(0,0,0,0.5);">
+                            <div class="container text-center text-white">
+                                <h2 class="display-4">Accessori e gadget</h2>
+                                <p class="lead text-truncate-2">Completa la tua esperienza con i nostri accessori di qualità superiore e gadget innovativi</p>
+                                <a href="#" class="btn btn-primary mt-3">Esplora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- main -->
+     <main>
+        <div class="text-center my-5">
+            <h1>Best <span class="text-primary">Store</span> Products</h1>
+        </div>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="d-flex align-items-center mb-4">
+                    <h2 class="mb-0">I nostri prodotti</h2>
+                    <div id="loadingSpinner" class="ms-3 d-none">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Caricamento...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="alertContainer" class="mb-4"></div>
+                
+                <div id="productsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                    <!--  prodotti verranno caricati dinamicamente qui -->
+                </div>
+                
+                <div id="noProducts" class="alert alert-info d-none">
+                    <h4 class="alert-heading">Nessun prodotto disponibile</h4>
+                    <p>Non ci sono prodotti nel database. Vai al <a href="backoffice.html" class="alert-link">back-office</a> per aggiungerne alcuni.</p>
+                </div>
+                
+                <div id="errorContainer" class="alert alert-danger d-none">
+                    <h4 class="alert-heading">Errore!</h4>
+                    <p id="errorMessage">Si è verificato un errore durante il caricamento dei prodotti.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </main>
+     <!-- footer -->
+     <footer class="text-center p-4 text-bg-dark">
+
+        <p>&copy; 2025 SuperStore. Tutti i diritti riservati.</p>
+
+     </footer>
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Script per gestire la navbar trasparente/solida durante lo scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navigation');
+            
+            function handleScroll() {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            }
+            
+            // Esegui subito per impostare lo stato iniziale
+            handleScroll();
+            
+            // Aggiungi event listener per lo scroll
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>

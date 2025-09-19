@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Back-office per la gestione dei prodotti">
+    <title>Back-office - SuperStore</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- nav -->
+    <nav id="navigation" class="navbar navbar-expand-lg navbar-white bg-white shadow-sm p-4">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand text-decoration-none">
+                <h2>Super<span class="text-primary">Store</span></h2>
+            </a>
+            
+            <!-- Hamburger menu button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./backoffice.html">Backoffice</a></li>
+                </ul>
+                
+                <form class="d-flex position-relative w-100" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Cerca">
+                    <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y search-button" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container py-5">
+        <!-- Alert per feedback -->
+        <div id="alertContainer" class="mb-4"></div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">Nuovo Prodotto</h1>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body py-4">
+                        <form id="productForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome Prodotto *</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Descrizione *</label>
+                                <textarea class="form-control" id="description" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="brand" class="form-label">Marca *</label>
+                                <input type="text" class="form-control" id="brand" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="imageUrl" class="form-label">URL Immagine *</label>
+                                <div class="input-group">
+                                    <input type="url" class="form-control" id="imageUrl" required>
+                                </div>
+                                <div class="form-text">Inserisci un URL o cerca un'immagine su Pexels</div>
+                            </div>
+                            <!-- Prezzo -->
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Prezzo *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">€</span>
+                                    <input type="number" class="form-control" id="price" min="0" step="0.01" required>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-2">
+                                <button type="submit" id="submitBtn" class="btn btn-primary">Salva Prodotto</button>
+                                <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+                                <button type="button" id="deleteBtn" class="btn btn-danger d-none">Elimina</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- anteprima -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="card-title mb-0">Anteprima</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class=" mb-3">
+                            <img id="previewImage" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Ctext%20fill%3D%22%23AAAAAA%22%20font-family%3D%22sans-serif%22%20font-size%3D%2216%22%20dy%3D%220.5em%22%20font-weight%3D%22bold%22%20x%3D%22100%22%20y%3D%22100%22%20text-anchor%3D%22middle%22%3EAnteprima%20Immagine%3C%2Ftext%3E%3C%2Fsvg%3E" class="img-fluid rounded" alt="Anteprima prodotto">
+                        </div>
+                        <h5 id="previewName" class="card-title">Nome Prodotto</h5>
+                        <p id="previewBrand" class="text-muted">Marca</p>
+                        <p id="previewDescription" class="card-text">Descrizione del prodotto...</p>
+                        <p class="fs-4 fw-bold text-primary" id="previewPrice">€ 0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- footer -->
+    <footer class="text-center p-4 text-bg-dark">
+        <p>&copy; 2025 SuperStore. Tutti i diritti riservati.</p>
+    </footer>
+    
+    <!-- Modal di conferma -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Conferma</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="confirmModalBody">
+                    Sei sicuro di voler procedere con questa operazione?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-primary" id="confirmModalBtn">Conferma</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/backoffice.js"></script>
+</body>
+</html>

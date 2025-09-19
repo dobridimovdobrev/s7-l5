@@ -1,0 +1,98 @@
+@import "partials/bootstrap-overrides";
+
+* {
+  box-sizing: border-box;
+}
+
+// Classe per troncare il testo dopo 2 righe
+.text-truncate-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 2.5em;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600 !important;
+}
+
+// Stili per navbar trasparente e sticky (solo per la home page)
+.home-page {
+  // Aggiunge padding-top al body per compensare la navbar fixed
+  padding-top: 70px;
+  
+  #navigation {
+    transition: all 0.3s ease-in-out;
+    z-index: 1030;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    
+    .navbar-brand h2, .nav-link {
+      color: white;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    // Stile per l'icona hamburger nella navbar trasparente
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.5);
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+    }
+    
+    &.navbar-scrolled {
+      background-color: white !important;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+      
+      .navbar-brand h2, .nav-link {
+        color: inherit;
+        text-shadow: none;
+      }
+      
+      // Ripristina lo stile dell'icona hamburger quando la navbar è scrolled
+      .navbar-toggler {
+        border-color: rgba(0, 0, 0, 0.1);
+        
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+      }
+    }
+  }
+  
+  // Assicura che il carousel inizi dall'alto della pagina
+  header {
+    margin-top: -70px; // Compensa il padding-top del body
+  }
+}
+
+.navbar-nav {
+  & .nav-item {
+    display: flex;
+    gap: 2rem;
+
+    & .nav-link {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600 !important;
+      font-size: 1.2rem;
+    }
+  }
+}
+
