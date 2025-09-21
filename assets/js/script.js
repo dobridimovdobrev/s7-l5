@@ -43,11 +43,11 @@ function createProductCard(product) {
             <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
                 <p class="text-muted mb-2">${product.brand}</p>
-                <p class="card-text">${product.description.substring(0, 100)}${product.description.length > 100 ? '...' : ''}</p>
+                <p class="card-text">${product.description.substring(0, 90)}${product.description.length > 90 ? '...' : ''}</p>
                 <p class="fw-bold text-primary fs-5 mb-3">€ ${product.price.toFixed(2)}</p>
                 <div class="d-flex justify-content-between">
                     <a href="details.html?id=${product._id}" class="btn btn-primary">Scopri di più</a>
-                    <a href="backoffice.html?id=${product._id}" class="btn btn-outline-secondary">Modifica</a>
+                    <a href="backoffice.html?id=${product._id}" class="btn btn-light">Modifica</a>
                 </div>
             </div>
         </div>
